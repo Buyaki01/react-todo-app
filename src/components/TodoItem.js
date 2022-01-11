@@ -35,10 +35,13 @@ class TodoItem extends React.Component {
       <li className={styles.item}>
         <div onDoubleClick={this.handleEditing} style={viewMode} >
           <input
-            type="checkbox"
-            className={styles.checkbox}
-            checked={completed}
-            onChange={() => this.props.handleChangeProps(id)}
+            type="text"
+            style={editMode}
+            className={styles.textInput}
+            value={title}
+            onChange={e => {
+              this.props.setUpdate(e.target.value, id)
+            }}
           />
           <button onClick={() => this.props.deleteTodoProps(id)}>
             Delete
