@@ -12,6 +12,10 @@ class TodoItem extends React.Component {
     })
   }
 
+  handleUpdatedDone = event => {
+    console.log(event.key)
+  }
+
   render() {
     const completedStyle = {
       fontStyle: "italic",
@@ -42,6 +46,7 @@ class TodoItem extends React.Component {
             onChange={e => {
               this.props.setUpdate(e.target.value, id)
             }}
+            onKeyDown={this.handleUpdatedDone}
           />
           <button onClick={() => this.props.deleteTodoProps(id)}>
             Delete
