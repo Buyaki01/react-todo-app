@@ -31,7 +31,8 @@ class TodoItem extends React.Component {
 
     if (this.state.editing) {
       viewMode.display = "none"
-    } else {
+    } 
+    else {
       editMode.display = "none"
     }
 
@@ -40,15 +41,10 @@ class TodoItem extends React.Component {
     return (
       <li className={styles.item}>
         <div onDoubleClick={this.handleEditing} style={viewMode} >
-          <input
-            type="text"
-            style={editMode}
-            className={styles.textInput}
-            value={title}
-            onChange={e => {
-              this.props.setUpdate(e.target.value, id)
-            }}
-            onKeyDown={this.handleUpdatedDone}
+          <input type="checkbox"
+            className={styles.checkbox}
+            checked={completed}
+            onChange={() => this.props.handleChangeProps(id)} 
           />
           <button onClick={() => this.props.deleteTodoProps(id)}>
             Delete
@@ -57,7 +53,15 @@ class TodoItem extends React.Component {
             {title}
           </span>
         </div>
-        <input type="text" style={editMode} className={styles.textInput} />
+        <input type="text" 
+          style={editMode} 
+          className={styles.textInput} 
+          value={title}
+          onChange={e => {
+              this.props.setUpdate(e.target.value, id)
+          }} 
+          onKeyDown={this.handleUpdatedDone}
+        />
       </li>
     )
   }
