@@ -73,7 +73,6 @@ const TodoContainer = () => {
   return (
     <>
       <Navbar />
-      <About />
       <Routes>
         <Route
           path="/"
