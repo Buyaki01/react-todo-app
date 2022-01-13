@@ -8,5 +8,3 @@ const NotMatch = () => {
   )
 }
 export default NotMatch
-
-src/functionBased/pages/NotMatch.js
