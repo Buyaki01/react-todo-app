@@ -14,9 +14,11 @@ const TodoItem = props  => {
     }
   }
 
-  // componentWillUnmount = () => {
-  //   console.log("Cleaning up...")
-  // }
+  useEffect(() => {
+    return () => {
+      console.log("Cleaning up...")
+    }
+  }, [])
 
   
   const completedStyle = {
