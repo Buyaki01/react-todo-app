@@ -75,26 +75,23 @@ const TodoContainer = () => {
         <Route
           path="/"
           element={(
-            <div className="main-container">
-              <Header />
-              <InputTodo addTodoItem={addTodoItem} />
-              <TodoList
-                todos={todos}
-                handleChange={handleChange}
-                delTodo={delTodo}
-                setUpdate={setUpdate}
-              />
+            <div className="container">
+              <div className="inner">
+                <Header />
+                <InputTodo addTodoProps={this.addTodoItem} />
+                <TodosList
+                  todos={this.state.todos}
+                  handleChangeProps={this.handleChange}
+                  deleteTodoProps={this.delTodo}
+                  setUpdate={this.setUpdate}
+                />
+              </div>
             </div>
           )}
         />
 
-        {/* <Route path="/about">
-          <About />
-        </Route>
-      
-        <Route path="*">
-          <NotMatch />
-        </Route> */}
+        {/* <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotMatch />} /> */}
 
       </Routes>
     </> 
