@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
 }
-  
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.4;
@@ -19,6 +19,24 @@ body {
   align-items: center;
   max-width: 600px;
   margin: 0 auto;
+}
+
+.navBarLinks {
+  list-style-type: none;
+  display: flex;
+  justify-content: end;
+  margin: 0;
+  padding: 0;
+}
+
+.listItem {
+  border-right: 2px solid gray;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.listItem:last-child {
+  border-right: none;
 }
 
 .inner {
